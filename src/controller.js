@@ -39,21 +39,13 @@ const addNoteHandler = (request, h) => {
 };
 
 const getAllNotesHandler = (request, h) => {
-  if (notes) {
-    const response = h.response({
-      status: "success",
-      data: {
-        notes,
-      },
-    });
-    response.status(201);
-    return response;
-  }
   const response = h.response({
-    status: "fail",
-    message: "somehow data tidak ada",
+    status: "success",
+    data: {
+      notes,
+    },
   });
-  response.status(500);
+  response.status(201);
   return response;
 };
 
